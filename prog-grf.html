@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+
+</head>
+<body>
+  <div id="app">
+	<span>Nombre : </span>
+	<el-input placeholder="Nombre" v-model="input"></el-input>
+<br>
+<br>
+	<span>Genero :</span>
+	 <el-radio v-model="radio7" label="1" border>Masculino</el-radio>
+    	 <el-radio v-model="radio7" label="2" border>Femenino</el-radio>
+<br>
+<br>
+<br>	
+	<span>Telefono:</span>
+	<el-input placeholder="Escriba Telefono e.g.: #####-#####" v-model="input"></el-input>
+<br>
+<br>
+	<template>
+  <el-select v-model="value" placeholder="Elija su carrera">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+<br>
+<br>
+<template>
+  <!-- `checked` should be true or false -->
+  <el-checkbox v-model="checked">Terminos y condiciones</el-checkbox>
+</template>
+<br>
+<br>
+<el-row>
+  <el-button>Aceptar</el-button>
+  <el-button>Cancelar</el-button>
+</el-row>
+  </div>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+  </script>
+</html>
